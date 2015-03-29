@@ -1,0 +1,143 @@
+UNIX
+
+Why Unix?
+-apps need a home. they can be inside of a browser, in your laptop, on a phone, in a server
+-the majority of the largest and most sophisticated apps (like the google apps) run on the UNIX os
+-it’s the de facto os for development
+-more stable
+-faster
+-more compatible
+-free
+-more open (open source)
+
+What is unix?
+-it’s a computer operating system
+-multi-process, it can do more than one thing at the same time
+-supports multiple users
+-developed by Ken Thompson, Dennis Ritchie, and some other AT&T Bell Labs smartypants, in the 60’s.
+-released in 1973
+-3 main families/fragments - due to legal restrictions
+  BSD - Berkeley Software Distribution
+  GNU - GNU is not unix - Richard Stallman - led to Linux kernel (Linus TOrvold) - formed gnu linux, now called Linux
+  UNIX - corporate wing
+
+Most popular varieties of Unix?
+  linux - ubuntu, android
+  darwin - osx, iOS
+
+Why so popular?
+-built for developers, what makes it so successful?
+-The Unix philosophy
+  data as plaintext files - humans and computers can read data in the same way
+  many small programs - independent of each other - do one thing and do it really well
+  input-output redirection - input can come from something other than keyboard/mouse, output can go somewhere other than the screen, like to a file
+
+Components that make up Unix
+Unix Kernel - a program that manages the hardware
+<cookie illustration>
+  >other programs
+  >kernel
+  >CPU (how much the app can use) + memory (how much RAM the app can use, what to do when there’s not enough) + Devices (input/output, keyboard mouse network card display)
+kernel is safe from hackers
+
+Unix shell - a program that provides the UI to the kernel
+OGUI - the original user interface was the command line 
+Graphical UI - modern UI that can take commands from a mouse, multi-touch interfaces, audible user interfaces, 
+
+Shell refers to command line
+(turtle illustration)
+the shell prevents the user from directly accessing the kernel
+
+uname = unix name
+
+$PATH - when you run a command, search in these places
+
+Unix command line basics
+Terminal
+what you see
+working directory
+prompt symbol
+
+control-c = exit
+
+fish goodies
+shows the ~ as blue when command was successful, red when not
+use ll instead of ls -lh
+
+concepts
+
+•path - location - general to specific - like the address,but backwards
+  a path that starts with a “/“ is an absolute path
+  paths can be absolute or relative
+  pathnames sometimes need an escape key, like if there’s a space in a directory or file name. Use a “\” before the space. Alternately, wrap the whole path name in single quotes
+
+•flags
+  flags can be combined
+
+•naming conventions
+  don’t use spaces in names
+    use dashes or underscores, which you use depends a lot on what language you are using. Follow their conventions.
+  case sensitive
+    best practice is to make everything lowercase or camel case
+    osx and windows are case insensitive (more user friendly)
+    linux is case sensitive
+
+•shortcuts
+
+commands
+pwd - print working directory
+cd /
+  / is the root directory 
+  root is restricted to administrative users
+  don’t delete anything from root
+cd 
+  with no path specified, cd takes you to home dir
+  .. takes you up one directory
+  . is current directory
+
+ls 
+  default shows files in alphabetical order, uc first then lc
+  t - shows most recently modified files first
+  l - shows long format (details!)
+    shows permissions, procID(?), owner, group, file size in bytes, modification date, name
+    blue is folders/directories (also perms start with a ‘d’)
+    white is files
+    pinky-purple shows symbolic links (also perm starts with ‘l’)
+  r - reverse order
+  a - shows hidden files - files that start with a “."
+man 
+  q to quit
+
+echo - print to screen
+cat - concatenate
+
+history - shows everything you’ve done
+
+less - a “pager” program that shows you output one page at a time
+  h = help = will show you all of the commands that work in the program
+  arrow keys to move up/down, space goes one page forward,
+  /git > will search and highlight all git commands
+  n will go to next
+| - pipe - a redirection command that lets you take the output of one command and send it as input to another command - this is called piping, also called chaining 
+
+> - a redirection command
+  history > moving_around.txt will send the output of history to a file called moving_around.txt
+
+>> - a redirection command that appends the file
+
+mkdir - make a directory/folder
+mv
+move
+  mv filename.txt folder_name
+move & rename
+  mv filename.txt folder_name/newfilename.txt
+rename
+  mv filename.txt newfilename.txt
+cp - copy
+
+rm - remove
+
+rmdir - remove directory
+
+touch - creates a file
+  touch git-notes.txt

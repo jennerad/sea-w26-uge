@@ -1,0 +1,105 @@
+GIT
+
+setup, have to do this on each computer you work on
+    git config —global user.name “first last”
+    git config —global email “first@whatev.com”
+
+git init - make sure you are IN the project folder that you want to be tracked by git, 
+  creates a .git file inside of the dir
+  run this just once per project
+
+once you have git initiated on a directory, the prompt changes to directory + the branch name + red x
+once you’ve committed everything the red x changes to a green check
+
+to get rid of git
+  rm -rf .git
+
+git status
+  shows you status of all files in directory, whether they are modified, deleted, etc.
+
+git add - adds file(s) to the staging area
+  git add filename.txt
+  git add . (will add all files)
+to unstage
+  git reset HEAD <filename>
+
+git commit
+  everything that is in the staging area will be committed
+  present tense, starts with a cap
+  -m means you’ll have a message
+  git commit -m “Add unix notes"
+
+git log - shows the 5 things that a commit creates
+  commit id, author, timestamp, comments, changes
+
+git ll - shows the 5 things that changed on each file
+  commit id, time, author, changes, comments
+
+git la - shows the details of all of the changes, the + show insertions and then below, all of the details of the insertions using less
+
+git df - shows you the changes prior to adding to staging area, only works before a commit
+
+labels 
+example: (HEAD, master)
+what is HEAD - it follows whatever is the most current set of commited changes or whatever will be
+when we first make the repo, we got the label master
+when we made a commit, we got another label called HEAD, it also points to the commit
+HEAD follows the leading commit on the active branch. 
+
+we can make other labels called branches
+master is the default branch
+branches are helpful for collaboration, when you want to build features off of a stable place. master is that stable place
+
+git branch (by itself) shows you all branches, highlights current
+
+git branch <newbranchname>
+  will point to most current label
+
+git checkout <newbranchname>
+
+git checkout -b <newbranchname> - to create a branch and check it out
+
+to merge a branch with master
+git checkout master
+git merge git-notes 
+all labels will point to the most recent, which was previously the branch
+
+to remove an unneeded branch
+git branch -d git-notes
+you can’t be actively on the branch you’re trying to get rid of
+
+
+GitHub
+working with github
+create the repo on GitHub
+  don’t check the initialize box, if you’ve already initialized it on your local dir
+git remote add
+git remote add origin https://github.com/jennerad/uge_workshop.git
+    key is origin, value is the url
+  git remote > shows the remote name
+  git remove -v > shows the url for fetch & push
+git push (-u connects the two and you don’t have to type the whole thing every time…i.e. next time you just say git push)
+git push -u origin master
+
+ clone an existing GitHub repo
+go to the directory you want it to be in
+git clone https://github.com/fjdljfld/kdjfljdlfjsl.git
+
+Pull from GitHub
+  git pull
+
+Pull request is a GitHub concept
+  you make a change or comment to someone else’s repo, and you want them to merge it in.
+
+Make a branch
+Add a commit
+Send it to GitHub & make a pull request 
+  (git push origin pull-request) (from current branch to origin)
+  on github, click on green button ”compare & pull request”
+  add some comments
+  push green add pull request button
+Accept and merge
+Click Merge button and leave comments
+
+Then it’s ok to checkout master, do a git pull, and then remove the branch.
+
